@@ -145,6 +145,7 @@ Partial Class Form1
         Me.PictureBox1.Location = New System.Drawing.Point(29, 343)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(201, 173)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 10
         Me.PictureBox1.TabStop = False
         '
@@ -153,6 +154,7 @@ Partial Class Form1
         Me.PictureBox2.Location = New System.Drawing.Point(301, 343)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(199, 173)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 11
         Me.PictureBox2.TabStop = False
         '
@@ -161,6 +163,7 @@ Partial Class Form1
         Me.PictureBox3.Location = New System.Drawing.Point(565, 343)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(214, 173)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 12
         Me.PictureBox3.TabStop = False
         '
@@ -233,7 +236,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(856, 528)
+        Me.ClientSize = New System.Drawing.Size(982, 575)
         Me.Controls.Add(Me.lblDescription3)
         Me.Controls.Add(Me.lblDescription2)
         Me.Controls.Add(Me.lblDescription1)
