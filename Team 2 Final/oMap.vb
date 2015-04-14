@@ -15,7 +15,6 @@ Public Class oMap
 
         Return mapImage
 
-
     End Function
 
     Private Function mapstringBuilder(city As String, state As String)

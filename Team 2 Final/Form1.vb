@@ -6,37 +6,14 @@ Imports System.Xml
 
 Public Class Form1
 
-    'Map
-    'Private Sub btnGetMap_Click(sender As Object, e As EventArgs) Handles btnGetMap.Click
-    '    'Use string builder to build url for map request
-    '    Dim mapURL As String = mapstringBuilder()
-    '    Dim webRequestMap As WebRequest = WebRequest.Create(mapURL)
-
-    '    'get response stream
-    '    Dim mapResponseStream As Stream = webRequestMap.GetResponse.GetResponseStream()
-    '    Dim mapImage As Image = Image.FromStream(mapResponseStream)
-    '    'fill image box with the map
-    '    picMap.Image = mapImage
-
-    'End 
     Dim formMap As New oMap
+
     Private Sub btnGetMap_Click(sender As Object, e As EventArgs) Handles btnGetMap.Click
         Dim city As String = txtBoxCityName.Text
         Dim state As String = stateComboBox.Text
         picMap.Image = formMap.makeMap(city, state)
 
     End Sub
-
-
-
-    'Private Function mapstringBuilder()
-    '    'this function reads the city and state text and combo boxes, builds the map url and then returns it
-    '    Dim city As String = txtBoxCityName.Text
-    '    Dim State As String = stateComboBox.Text
-
-    '    Dim finalURL As String = "http://dev.virtualearth.net/REST/V1/Imagery/Map/Road/" & city & "%20" & State & "?mapLayer=TrafficFlow&key=An-81Wbif7kcwdVz7O47yB-qL873cvss4xlu5agBGySz9TGgL62UNqZNmKgIA5EO"
-    '    Return finalURL
-    'End Function
 
     'Weather
 
