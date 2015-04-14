@@ -43,6 +43,8 @@ Partial Class Form1
         Me.lblDescription2 = New System.Windows.Forms.Label()
         Me.lblDescription3 = New System.Windows.Forms.Label()
         Me.apiBackgroundWorker = New System.ComponentModel.BackgroundWorker()
+        Me.btnGetMorePhotos = New System.Windows.Forms.Button()
+        Me.lstboxCoordinates = New System.Windows.Forms.ListBox()
         CType(Me.forecastImageBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.forecastImageBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.forecastImageBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -232,11 +234,30 @@ Partial Class Form1
         'apiBackgroundWorker
         '
         '
+        'btnGetMorePhotos
+        '
+        Me.btnGetMorePhotos.Location = New System.Drawing.Point(804, 493)
+        Me.btnGetMorePhotos.Name = "btnGetMorePhotos"
+        Me.btnGetMorePhotos.Size = New System.Drawing.Size(75, 23)
+        Me.btnGetMorePhotos.TabIndex = 20
+        Me.btnGetMorePhotos.Text = "More Photos"
+        Me.btnGetMorePhotos.UseVisualStyleBackColor = True
+        '
+        'lstboxCoordinates
+        '
+        Me.lstboxCoordinates.FormattingEnabled = True
+        Me.lstboxCoordinates.Location = New System.Drawing.Point(813, 30)
+        Me.lstboxCoordinates.Name = "lstboxCoordinates"
+        Me.lstboxCoordinates.Size = New System.Drawing.Size(129, 303)
+        Me.lstboxCoordinates.TabIndex = 21
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(982, 575)
+        Me.Controls.Add(Me.lstboxCoordinates)
+        Me.Controls.Add(Me.btnGetMorePhotos)
         Me.Controls.Add(Me.lblDescription3)
         Me.Controls.Add(Me.lblDescription2)
         Me.Controls.Add(Me.lblDescription1)
@@ -291,5 +312,7 @@ Partial Class Form1
     Friend WithEvents lblDescription2 As System.Windows.Forms.Label
     Friend WithEvents lblDescription3 As System.Windows.Forms.Label
     Friend WithEvents apiBackgroundWorker As System.ComponentModel.BackgroundWorker
+    Friend WithEvents btnGetMorePhotos As System.Windows.Forms.Button
+    Friend WithEvents lstboxCoordinates As System.Windows.Forms.ListBox
 
 End Class

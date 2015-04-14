@@ -57,6 +57,9 @@ Public Class Form1
 
     'Flickr
 
+    Dim count As Integer = 1
+
+
     '' FLCIKR API KEY 4f60a04f101ef604ead9be84856d9519
     '' FLICKR API SECRET 4e3fc31dff403d28
     Public Function city() As String
@@ -82,6 +85,12 @@ Public Class Form1
 
 
     Private Sub btnGetFlickr_Click(sender As Object, e As EventArgs) Handles btnGetFlickr.Click
+        flickrInfo()
+
+    End Sub
+
+
+    Private Sub flickrInfo()
         '' call city and state fuctions
         ' callCityAndState()
         '' base api method use
@@ -106,7 +115,7 @@ Public Class Form1
                 '' still need to rebuild using the flickr.photo.search method with custom search options similar to ones specified here.
                 '' this search request is for St. Louis, MO. this particular method does not need to be authorized. and most parameters are optional.
                 Dim cityName As String = txtBoxCityName.Text
-                Dim requestedTest As String = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c4471b9774deb717aa6c61f6b88e259a&tags=" & cityName & "&per_page=3&page=1&format=rest"
+                Dim requestedTest As String = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c4471b9774deb717aa6c61f6b88e259a&tags=" & cityName & "&per_page=3&page=" & count & "format=rest"
                 '' create the web request using the above url
                 Dim flickrRequestPhoto As WebRequest = WebRequest.Create(requestedTest)
                 '' store the response stream in the created variable
@@ -182,16 +191,18 @@ Public Class Form1
             MessageBox.Show(ex.Message)
         End Try
 
-        
+
 
 
     End Sub
 
 
 
+    Private Sub btnGetMorePhotos_Click(sender As Object, e As EventArgs) Handles btnGetMorePhotos.Click
+        count += 1
+        flickrInfo()
 
-
-
+    End Sub
 End Class
 
 'To do
