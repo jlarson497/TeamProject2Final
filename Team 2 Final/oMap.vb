@@ -39,8 +39,8 @@ Public Class oMap
         Dim xmlCoordinateReader As New XmlDocument
         xmlCoordinateReader.Load(coordinateResponseStream)
         'not sure if the following is the correct node, will need to double check to be sure
-        Dim xmlCoordinateLatitude As XmlNode = xmlCoordinateReader.SelectSingleNode("//Point/Latitude")
-        Dim latitude As Double = xmlCoordinateLatitude.InnerText
+        Dim xmlCoordinateLatitude As XmlNode = xmlCoordinateReader.SelectSingleNode("//Latitude")
+        Dim latitude As String = xmlCoordinateLatitude.InnerText
 
         Return latitude
 
@@ -62,8 +62,8 @@ Public Class oMap
         Dim xmlCoordinateReader As New XmlDocument
         xmlCoordinateReader.Load(coordinateResponseStream)
 
-        Dim xmlCoordinateLongitude As XmlNode = xmlCoordinateReader.SelectSingleNode("//Point/Longitude")
-        Dim longitude As Double = xmlCoordinateLongitude.InnerText
+        Dim xmlCoordinateLongitude As XmlNode = xmlCoordinateReader.SelectSingleNode("//Longitude")
+        Dim longitude As String = xmlCoordinateLongitude.InnerText
 
         Return longitude
     End Function
@@ -85,7 +85,14 @@ Public Class oMap
         Next
 
         'Now I need to build a full string, concatonating the reformatted pins
+        'A regular string.join did not work because that works with arrays
+        'I found the solution here: http://stackoverflow.com/questions/213295/how-do-i-create-a-comma-delimited-string-from-an-arraylist
 
+
+        Dim finalPinString As String = String.Join(",", CType(pinList.ToArray(Type.GetType("System.String")), String()))
+
+
+        Return finalPinString
 
 
 

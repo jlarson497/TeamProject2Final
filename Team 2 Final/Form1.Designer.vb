@@ -50,10 +50,11 @@ Partial Class Form1
         Me.lblLong2 = New System.Windows.Forms.Label()
         Me.lblLat2 = New System.Windows.Forms.Label()
         Me.lblLong3 = New System.Windows.Forms.Label()
-        Me.lblLatitude3 = New System.Windows.Forms.Label()
+        Me.lblLat3 = New System.Windows.Forms.Label()
         Me.btnAddPin1 = New System.Windows.Forms.Button()
         Me.btnAddPin2 = New System.Windows.Forms.Button()
         Me.brtAddPin3 = New System.Windows.Forms.Button()
+        Me.btnMakePinnedMap = New System.Windows.Forms.Button()
         CType(Me.forecastImageBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.forecastImageBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.forecastImageBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -305,14 +306,14 @@ Partial Class Form1
         Me.lblLong3.TabIndex = 26
         Me.lblLong3.Text = "Longitude"
         '
-        'lblLatitude3
+        'lblLat3
         '
-        Me.lblLatitude3.AutoSize = True
-        Me.lblLatitude3.Location = New System.Drawing.Point(645, 544)
-        Me.lblLatitude3.Name = "lblLatitude3"
-        Me.lblLatitude3.Size = New System.Drawing.Size(45, 13)
-        Me.lblLatitude3.TabIndex = 27
-        Me.lblLatitude3.Text = "Latitude"
+        Me.lblLat3.AutoSize = True
+        Me.lblLat3.Location = New System.Drawing.Point(645, 544)
+        Me.lblLat3.Name = "lblLat3"
+        Me.lblLat3.Size = New System.Drawing.Size(45, 13)
+        Me.lblLat3.TabIndex = 27
+        Me.lblLat3.Text = "Latitude"
         '
         'btnAddPin1
         '
@@ -341,15 +342,25 @@ Partial Class Form1
         Me.brtAddPin3.Text = "Add Pin"
         Me.brtAddPin3.UseVisualStyleBackColor = True
         '
+        'btnMakePinnedMap
+        '
+        Me.btnMakePinnedMap.Location = New System.Drawing.Point(813, 343)
+        Me.btnMakePinnedMap.Name = "btnMakePinnedMap"
+        Me.btnMakePinnedMap.Size = New System.Drawing.Size(129, 23)
+        Me.btnMakePinnedMap.TabIndex = 31
+        Me.btnMakePinnedMap.Text = "Pin These Points!"
+        Me.btnMakePinnedMap.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(982, 589)
+        Me.Controls.Add(Me.btnMakePinnedMap)
         Me.Controls.Add(Me.brtAddPin3)
         Me.Controls.Add(Me.btnAddPin2)
         Me.Controls.Add(Me.btnAddPin1)
-        Me.Controls.Add(Me.lblLatitude3)
+        Me.Controls.Add(Me.lblLat3)
         Me.Controls.Add(Me.lblLong3)
         Me.Controls.Add(Me.lblLat2)
         Me.Controls.Add(Me.lblLong2)
@@ -418,9 +429,10 @@ Partial Class Form1
     Friend WithEvents lblLong2 As System.Windows.Forms.Label
     Friend WithEvents lblLat2 As System.Windows.Forms.Label
     Friend WithEvents lblLong3 As System.Windows.Forms.Label
-    Friend WithEvents lblLatitude3 As System.Windows.Forms.Label
+    Friend WithEvents lblLat3 As System.Windows.Forms.Label
     Friend WithEvents btnAddPin1 As System.Windows.Forms.Button
     Friend WithEvents btnAddPin2 As System.Windows.Forms.Button
     Friend WithEvents brtAddPin3 As System.Windows.Forms.Button
+    Friend WithEvents btnMakePinnedMap As System.Windows.Forms.Button
 
 End Class

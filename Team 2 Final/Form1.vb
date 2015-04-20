@@ -81,14 +81,16 @@ Public Class Form1
 
 
     Private Sub btnGetFlickr_Click(sender As Object, e As EventArgs) Handles btnGetFlickr.Click
-        flickrInfo()
+        'flickrInfo()
 
         'Adding in some test data so I can test out the new map and list funcitions--- this will add some made up coordinates
         'to see if I can pull them out, add them to the list(box) and build a functioning map with pins
-        'lblLong1.Text = "31.045"
-        'lblLat1.Text = "450.123"
-        'lblLong2.Text = "-45.390"
-        'lblLat2.Text = "123.456"
+        lblLong1.Text = "31.045"
+        lblLat1.Text = "450.123"
+        lblLong2.Text = "-45.390"
+        lblLat2.Text = "123.456"
+        lblLong3.Text = "35.151"
+        lblLat3.Text = "46.123"
 
 
     End Sub
@@ -212,6 +214,18 @@ Public Class Form1
         Dim longlat As String = formMap.coordBuilder(lblLong1.Text, lblLat1.Text)
         lstboxCoordinates.Items.Add(longlat)
         pushpinList.Add(longlat)
+    End Sub
+
+    Private Sub btnAddPin2_Click(sender As Object, e As EventArgs) Handles btnAddPin2.Click
+        Dim longlat As String = formMap.coordBuilder(lblLong2.Text, lblLat2.Text)
+        lstboxCoordinates.Items.Add(longlat)
+        pushpinList.Add(longlat)
+    End Sub
+
+    Private Sub btnMakePinnedMap_Click(sender As Object, e As EventArgs) Handles btnMakePinnedMap.Click
+        Dim mapPinURL As String = formMap.urlStringBuilder(pushpinList)
+        MessageBox.Show(mapPinURL)
+
     End Sub
 End Class
 
