@@ -16,6 +16,9 @@ Public Class Form1
         Dim city As String = txtBoxCityName.Text
         Dim state As String = stateComboBox.Text
         picMap.Image = formMap.makeMap(city, state)
+        lblCityLat.Text = formMap.getCityLat(city, state)
+        lblCityLong.Text = formMap.getCityLong(city, state)
+
 
     End Sub
 

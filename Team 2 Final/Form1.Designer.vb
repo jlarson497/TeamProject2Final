@@ -55,6 +55,8 @@ Partial Class Form1
         Me.btnAddPin2 = New System.Windows.Forms.Button()
         Me.brtAddPin3 = New System.Windows.Forms.Button()
         Me.btnMakePinnedMap = New System.Windows.Forms.Button()
+        Me.lblCityLat = New System.Windows.Forms.Label()
+        Me.lblCityLong = New System.Windows.Forms.Label()
         CType(Me.forecastImageBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.forecastImageBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.forecastImageBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -351,11 +353,31 @@ Partial Class Form1
         Me.btnMakePinnedMap.Text = "Pin These Points!"
         Me.btnMakePinnedMap.UseVisualStyleBackColor = True
         '
+        'lblCityLat
+        '
+        Me.lblCityLat.AutoSize = True
+        Me.lblCityLat.Location = New System.Drawing.Point(43, 291)
+        Me.lblCityLat.Name = "lblCityLat"
+        Me.lblCityLat.Size = New System.Drawing.Size(42, 13)
+        Me.lblCityLat.TabIndex = 32
+        Me.lblCityLat.Text = "City Lat"
+        '
+        'lblCityLong
+        '
+        Me.lblCityLong.AutoSize = True
+        Me.lblCityLong.Location = New System.Drawing.Point(141, 291)
+        Me.lblCityLong.Name = "lblCityLong"
+        Me.lblCityLong.Size = New System.Drawing.Size(51, 13)
+        Me.lblCityLong.TabIndex = 33
+        Me.lblCityLong.Text = "City Long"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(982, 589)
+        Me.Controls.Add(Me.lblCityLong)
+        Me.Controls.Add(Me.lblCityLat)
         Me.Controls.Add(Me.btnMakePinnedMap)
         Me.Controls.Add(Me.brtAddPin3)
         Me.Controls.Add(Me.btnAddPin2)
@@ -434,5 +456,7 @@ Partial Class Form1
     Friend WithEvents btnAddPin2 As System.Windows.Forms.Button
     Friend WithEvents brtAddPin3 As System.Windows.Forms.Button
     Friend WithEvents btnMakePinnedMap As System.Windows.Forms.Button
+    Friend WithEvents lblCityLat As System.Windows.Forms.Label
+    Friend WithEvents lblCityLong As System.Windows.Forms.Label
 
 End Class

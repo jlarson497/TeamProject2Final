@@ -1,6 +1,7 @@
 ﻿Imports System.Net
 Imports System.IO
 Imports System.Xml
+Imports System.Net.WebRequestMethods
 
 Public Class oMap
 
@@ -29,17 +30,27 @@ Public Class oMap
         Return finalURL
     End Function
 
-    Private Function getCityLat(city As String, state As String, coord As Double)
+    Private Function mapStringBuilderXMLPage(city As String, state As String)
+        'this function reads in the city and state and builds a url that displays a xml page so that I can get
+        'the coordinates for the center of the city.  We will use these coordinates to build a radius from which
+        'to get photos
+        'Dim xmlURL As String = "http://dev.virtualearth.net/REST/V1/Locations/US/" & city & "%20" & state & "?o=xml&key=An-81Wbif7kcwdVz7O47yB-qL873cvss4xlu5agBGySz9TGgL62UNqZNmKgIA5EO"
+        Dim testURL As String = "http://dev.virtualearth.net/REST/v1/Locations/US/%20Minneapolis%20MN?o=xml&key=An-81Wbif7kcwdVz7O47yB-qL873cvss4xlu5agBGySz9TGgL62UNqZNmKgIA5EO"
+
+        Return testURL
+    End Function
+
+    Public Function getCityLat(city As String, state As String)
         'This function gets and returns the latitude from the center of the city you search
         'At this time I am forgetting why I thought I needed "coord as double" as a parameter
         'it's not being used, and will cause an error if it's not included.  Test this with internet
-        Dim mapURL As String = mapstringBuilder(city, state)
+        Dim mapURL As String = mapStringBuilderXMLPage(city, state)
         Dim webRequestCoordinates As WebRequest = WebRequest.Create(mapURL)
         Dim coordinateResponseStream As Stream = webRequestCoordinates.GetResponse.GetResponseStream()
         Dim xmlCoordinateReader As New XmlDocument
         xmlCoordinateReader.Load(coordinateResponseStream)
         'not sure if the following is the correct node, will need to double check to be sure
-        Dim xmlCoordinateLatitude As XmlNode = xmlCoordinateReader.SelectSingleNode("//Latitude")
+        Dim xmlCoordinateLatitude As XmlNode = xmlCoordinateReader.SelectSingleNode("//Response/ResourceSets/ResourceSet/Resources/Location/Point/Latitude")
         Dim latitude As String = xmlCoordinateLatitude.InnerText
 
         Return latitude
@@ -54,15 +65,15 @@ Public Class oMap
         'Dim daytoreturn As String = xmlday.InnerText
     End Function
 
-    Private Function getCityLong(city As String, state As String, coord As Double)
+    Public Function getCityLong(city As String, state As String)
         'This function gets the longitude from the center of the city and returns it
-        Dim mapURL As String = mapstringBuilder(city, state)
+        Dim mapURL As String = mapStringBuilderXMLPage(city, state)
         Dim webRequestCoordinates As WebRequest = WebRequest.Create(mapURL)
         Dim coordinateResponseStream As Stream = webRequestCoordinates.GetResponse.GetResponseStream()
         Dim xmlCoordinateReader As New XmlDocument
         xmlCoordinateReader.Load(coordinateResponseStream)
 
-        Dim xmlCoordinateLongitude As XmlNode = xmlCoordinateReader.SelectSingleNode("//Longitude")
+        Dim xmlCoordinateLongitude As XmlNode = xmlCoordinateReader.SelectSingleNode("Longitude")
         Dim longitude As String = xmlCoordinateLongitude.InnerText
 
         Return longitude
@@ -70,8 +81,8 @@ Public Class oMap
 
     Public Function coordBuilder(longitude As String, latitude As String)
         'This takes the separate long and lat in from the labels under each pictures and puts them together
-        Dim fullLongLat As String = longitude & "," & latitude
-        Return fullLongLat
+        Dim fullLatLong As String = latitude & "," & longitude
+        Return fullLatLong
     End Function
 
     Public Function urlStringBuilder(pinList As ArrayList)
@@ -87,11 +98,9 @@ Public Class oMap
         'Now I need to build a full string, concatonating the reformatted pins
         'A regular string.join did not work because that works with arrays
         'I found the solution here: http://stackoverflow.com/questions/213295/how-do-i-create-a-comma-delimited-string-from-an-arraylist
-
+        'Then return the list to be used in the final url
 
         Dim finalPinString As String = String.Join(",", CType(pinList.ToArray(Type.GetType("System.String")), String()))
-
-
         Return finalPinString
 
 
