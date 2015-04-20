@@ -45,6 +45,15 @@ Partial Class Form1
         Me.apiBackgroundWorker = New System.ComponentModel.BackgroundWorker()
         Me.btnGetMorePhotos = New System.Windows.Forms.Button()
         Me.lstboxCoordinates = New System.Windows.Forms.ListBox()
+        Me.lblLong1 = New System.Windows.Forms.Label()
+        Me.lblLat1 = New System.Windows.Forms.Label()
+        Me.lblLong2 = New System.Windows.Forms.Label()
+        Me.lblLat2 = New System.Windows.Forms.Label()
+        Me.lblLong3 = New System.Windows.Forms.Label()
+        Me.lblLatitude3 = New System.Windows.Forms.Label()
+        Me.btnAddPin1 = New System.Windows.Forms.Button()
+        Me.btnAddPin2 = New System.Windows.Forms.Button()
+        Me.brtAddPin3 = New System.Windows.Forms.Button()
         CType(Me.forecastImageBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.forecastImageBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.forecastImageBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -251,11 +260,101 @@ Partial Class Form1
         Me.lstboxCoordinates.Size = New System.Drawing.Size(129, 303)
         Me.lstboxCoordinates.TabIndex = 21
         '
+        'lblLong1
+        '
+        Me.lblLong1.AutoSize = True
+        Me.lblLong1.Location = New System.Drawing.Point(98, 519)
+        Me.lblLong1.Name = "lblLong1"
+        Me.lblLong1.Size = New System.Drawing.Size(54, 13)
+        Me.lblLong1.TabIndex = 22
+        Me.lblLong1.Text = "Longitude"
+        '
+        'lblLat1
+        '
+        Me.lblLat1.AutoSize = True
+        Me.lblLat1.Location = New System.Drawing.Point(98, 544)
+        Me.lblLat1.Name = "lblLat1"
+        Me.lblLat1.Size = New System.Drawing.Size(45, 13)
+        Me.lblLat1.TabIndex = 23
+        Me.lblLat1.Text = "Latitude"
+        '
+        'lblLong2
+        '
+        Me.lblLong2.AutoSize = True
+        Me.lblLong2.Location = New System.Drawing.Point(374, 519)
+        Me.lblLong2.Name = "lblLong2"
+        Me.lblLong2.Size = New System.Drawing.Size(54, 13)
+        Me.lblLong2.TabIndex = 24
+        Me.lblLong2.Text = "Longitude"
+        '
+        'lblLat2
+        '
+        Me.lblLat2.AutoSize = True
+        Me.lblLat2.Location = New System.Drawing.Point(374, 544)
+        Me.lblLat2.Name = "lblLat2"
+        Me.lblLat2.Size = New System.Drawing.Size(45, 13)
+        Me.lblLat2.TabIndex = 25
+        Me.lblLat2.Text = "Latitude"
+        '
+        'lblLong3
+        '
+        Me.lblLong3.AutoSize = True
+        Me.lblLong3.Location = New System.Drawing.Point(645, 519)
+        Me.lblLong3.Name = "lblLong3"
+        Me.lblLong3.Size = New System.Drawing.Size(54, 13)
+        Me.lblLong3.TabIndex = 26
+        Me.lblLong3.Text = "Longitude"
+        '
+        'lblLatitude3
+        '
+        Me.lblLatitude3.AutoSize = True
+        Me.lblLatitude3.Location = New System.Drawing.Point(645, 544)
+        Me.lblLatitude3.Name = "lblLatitude3"
+        Me.lblLatitude3.Size = New System.Drawing.Size(45, 13)
+        Me.lblLatitude3.TabIndex = 27
+        Me.lblLatitude3.Text = "Latitude"
+        '
+        'btnAddPin1
+        '
+        Me.btnAddPin1.Location = New System.Drawing.Point(81, 560)
+        Me.btnAddPin1.Name = "btnAddPin1"
+        Me.btnAddPin1.Size = New System.Drawing.Size(75, 23)
+        Me.btnAddPin1.TabIndex = 28
+        Me.btnAddPin1.Text = "Add Pin"
+        Me.btnAddPin1.UseVisualStyleBackColor = True
+        '
+        'btnAddPin2
+        '
+        Me.btnAddPin2.Location = New System.Drawing.Point(355, 560)
+        Me.btnAddPin2.Name = "btnAddPin2"
+        Me.btnAddPin2.Size = New System.Drawing.Size(75, 23)
+        Me.btnAddPin2.TabIndex = 29
+        Me.btnAddPin2.Text = "Add Pin"
+        Me.btnAddPin2.UseVisualStyleBackColor = True
+        '
+        'brtAddPin3
+        '
+        Me.brtAddPin3.Location = New System.Drawing.Point(628, 560)
+        Me.brtAddPin3.Name = "brtAddPin3"
+        Me.brtAddPin3.Size = New System.Drawing.Size(75, 23)
+        Me.brtAddPin3.TabIndex = 30
+        Me.brtAddPin3.Text = "Add Pin"
+        Me.brtAddPin3.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(982, 575)
+        Me.ClientSize = New System.Drawing.Size(982, 589)
+        Me.Controls.Add(Me.brtAddPin3)
+        Me.Controls.Add(Me.btnAddPin2)
+        Me.Controls.Add(Me.btnAddPin1)
+        Me.Controls.Add(Me.lblLatitude3)
+        Me.Controls.Add(Me.lblLong3)
+        Me.Controls.Add(Me.lblLat2)
+        Me.Controls.Add(Me.lblLong2)
+        Me.Controls.Add(Me.lblLat1)
+        Me.Controls.Add(Me.lblLong1)
         Me.Controls.Add(Me.lstboxCoordinates)
         Me.Controls.Add(Me.btnGetMorePhotos)
         Me.Controls.Add(Me.lblDescription3)
@@ -314,5 +413,14 @@ Partial Class Form1
     Friend WithEvents apiBackgroundWorker As System.ComponentModel.BackgroundWorker
     Friend WithEvents btnGetMorePhotos As System.Windows.Forms.Button
     Friend WithEvents lstboxCoordinates As System.Windows.Forms.ListBox
+    Friend WithEvents lblLong1 As System.Windows.Forms.Label
+    Friend WithEvents lblLat1 As System.Windows.Forms.Label
+    Friend WithEvents lblLong2 As System.Windows.Forms.Label
+    Friend WithEvents lblLat2 As System.Windows.Forms.Label
+    Friend WithEvents lblLong3 As System.Windows.Forms.Label
+    Friend WithEvents lblLatitude3 As System.Windows.Forms.Label
+    Friend WithEvents btnAddPin1 As System.Windows.Forms.Button
+    Friend WithEvents btnAddPin2 As System.Windows.Forms.Button
+    Friend WithEvents brtAddPin3 As System.Windows.Forms.Button
 
 End Class

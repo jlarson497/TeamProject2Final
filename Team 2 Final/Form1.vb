@@ -8,6 +8,7 @@ Public Class Form1
 
     Dim formMap As New oMap
     Dim formWeather As New oWeather
+    Dim pushpinList As New ArrayList
 
 
 
@@ -17,11 +18,6 @@ Public Class Form1
         picMap.Image = formMap.makeMap(city, state)
 
     End Sub
-
-
-
-
-
 
 
 
@@ -86,6 +82,14 @@ Public Class Form1
 
     Private Sub btnGetFlickr_Click(sender As Object, e As EventArgs) Handles btnGetFlickr.Click
         flickrInfo()
+
+        'Adding in some test data so I can test out the new map and list funcitions--- this will add some made up coordinates
+        'to see if I can pull them out, add them to the list(box) and build a functioning map with pins
+        'lblLong1.Text = "31.045"
+        'lblLat1.Text = "450.123"
+        'lblLong2.Text = "-45.390"
+        'lblLat2.Text = "123.456"
+
 
     End Sub
 
@@ -202,6 +206,12 @@ Public Class Form1
         count += 1
         flickrInfo()
 
+    End Sub
+
+    Private Sub btnAddPin1_Click(sender As Object, e As EventArgs) Handles btnAddPin1.Click
+        Dim longlat As String = formMap.coordBuilder(lblLong1.Text, lblLat1.Text)
+        lstboxCoordinates.Items.Add(longlat)
+        pushpinList.Add(longlat)
     End Sub
 End Class
 
